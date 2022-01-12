@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:background="@color/black"
+    tools:context=".ui.GameFragment">
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/score"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:src="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="@id/fSlots"
+        app:layout_constraintStart_toStartOf="@id/fSlots"
+        app:layout_constraintBottom_toBottomOf="@id/fSlots"
+        app:layout_constraintTop_toTopOf="@id/fSlots"/>
+
+    <com.getter.kollytsi.ui.OneSlot
+        android:id="@+id/osFirst"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <com.getter.kollytsi.ui.OneSlot
+        android:id="@+id/osSecond"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <com.getter.kollytsi.ui.OneSlot
+        android:id="@+id/osThird"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/fSlots"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.22"
+        android:layout_margin="16dp"
+        app:constraint_referenced_ids="osThird,osSecond,osFirst"
+        app:layout_constraintBottom_toTopOf="@+id/btnRoll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvScore" />
+
+    <Button
+        android:id="@+id/btnRoll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Roll"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
